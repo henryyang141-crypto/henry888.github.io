@@ -13,7 +13,7 @@
 }
 body {
   background: #f5f5f7;
-  color: #1d1d1d;
+  color: #1d1d1f;
 }
 
 /* 登录页面 */
@@ -241,7 +241,7 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  border: 1px solid #c2c2d7;
+  border: 1px solid #c2d7;
   background: #fff;
   cursor: pointer;
   flex-shrink: 0;
@@ -265,7 +265,7 @@ body {
   background: transparent;
 }
 .todo-input::placeholder {
-  color: #c2c2d7;
+  color: #c2d7;
 }
 .todo-input.done {
   color: #86868b;
@@ -296,10 +296,9 @@ body {
 }
 </style>
 </head>
-
 <body>
 
-<!-- ==================== 登录 ==================== -->
+<!-- 登录 -->
 <div class="login-wrapper" id="loginPage">
   <div class="login-box">
     <h2>个人中心</h2>
@@ -317,7 +316,7 @@ body {
   </div>
 </div>
 
-<!-- ==================== 主界面 ==================== -->
+<!-- 主界面 -->
 <div class="container" id="mainPage">
 
   <!-- 🍎 首页 -->
@@ -332,16 +331,20 @@ body {
     </div>
   </div>
 
-  <!-- 🏠 家庭操控面板 -->
+  <!-- 🏠 家庭操控面板 → 苹果官方真实 APP 协议 -->
   <div class="page" id="page-family">
-    <h2>🏠 家庭操控面板</h2>
-    <a class="link-card" href="itms-apps://itunes.apple.com/app/apple-home/id1034418074">
-      <div class="title">Apple Home</div>
-      <div class="desc">打开苹果家庭智能控制</div>
+    <h2>🏠 家庭操控面板</h1>
+    <a class="link-card" href="com.apple.home://">
+      <div class="title">Home</div>
+      <div class="desc">打开苹果家庭 APP</div>
     </a>
-    <a class="link-card" href="itms-apps://itunes.apple.com/app/ring/id1191946769">
-      <div class="title">Ring 门铃</div>
-      <div class="desc">打开 Ring 监控与门铃</div>
+    <a class="link-card" href="aqarahome://">
+      <div class="title">Aqara Home</div>
+      <div class="desc">打开绿米 Aqara Home</div>
+    </a>
+    <a class="link-card" href="ring://">
+      <div class="title">Ring</div>
+      <div class="desc">打开 Ring APP</div>
     </a>
   </div>
 
@@ -398,10 +401,9 @@ body {
     </div>
   </div>
 
-  <!-- 🔗 实用链接（你给的全部已加好） -->
+  <!-- 🔗 实用链接 -->
   <div class="page" id="page-links">
     <h2>🔗 实用链接</h2>
-
     <a class="link-card" href="https://github.com/kanshurichard/enableAppleAI" target="_blank">
       <div class="title">Apple AI 启用工具</div>
       <div class="desc">GitHub - 开启苹果智能功能</div>
@@ -438,7 +440,7 @@ body {
 
 </div>
 
-<!-- ==================== 苹果风格导航 ==================== -->
+<!-- 苹果风格导航 -->
 <div class="navbar">
   <div class="nav-item">
     <span onclick="showPage('page-home')">首页</span>
@@ -467,11 +469,11 @@ body {
 </div>
 
 <script>
-// 登录
+// 登录（不区分大小写）
 function login() {
-  const u = document.getElementById('username').value.trim();
+  const u = document.getElementById('username').value.trim().toLowerCase();
   const p = document.getElementById('password').value.trim();
-  if (u === 'Henry888' && p === '123456') {
+  if (u === 'henry888' && p === '123456') {
     document.getElementById('loginPage').style.display = 'none';
     document.getElementById('mainPage').style.display = 'block';
     showPage('page-home');
